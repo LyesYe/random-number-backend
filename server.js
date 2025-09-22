@@ -78,13 +78,7 @@ app.get('/api/current-number', (req, res) => {
             success: true,
             data: {
                 number: currentNumber,
-                timestamp: now.toISOString(),
-                formula: '(hour + minute + second) % 100',
-                components: {
-                    hour: now.getHours(),
-                    minute: now.getMinutes(),
-                    second: now.getSeconds()
-                }
+                timestamp: now.toISOString()
             }
         });
     } catch (error) {
