@@ -52,6 +52,22 @@ function generateTimeBasedNumber() {
 
 // API Routes
 
+// Root route - API information
+app.get('/', (req, res) => {
+    res.json({
+        success: true,
+        message: 'Random Number Backend API',
+        version: '1.0.0',
+        endpoints: {
+            'GET /api/current-number': 'Get the current time-based random number',
+            'POST /api/predict': 'Submit a prediction',
+            'POST /api/log-access': 'Log frontend access',
+            'GET /api/health': 'Health check endpoint'
+        },
+        documentation: 'Visit /api/health for server status'
+    });
+});
+
 // Get current random number
 app.get('/api/current-number', (req, res) => {
     try {
